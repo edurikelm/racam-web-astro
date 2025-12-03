@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Racam - Servicios Eléctricos Integrales. Expertos en instalaciones eléctricas, media y baja tensión, ingeniería y estudios eléctricos." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- REMIXICONS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+		
+		<!-- SWIPER CSS -->
+		<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		
+		<!-- SCROLLREVEAL -->
+		<script is:inline src="/assets/js/scrollreveal.min.js"></script>
+		
+		<!-- SWIPER JS -->
+		<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+		
+		<!-- MAIN JS -->
+		<script is:inline src="/assets/js/main.js"></script>
+	</body>
+</html>

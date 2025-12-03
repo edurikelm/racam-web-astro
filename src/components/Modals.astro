@@ -1,0 +1,57 @@
+<!-- PROJECT MODAL -->
+<div class="modal" id="project-modal">
+   <div class="modal__content">
+      <div class="modal__header">
+         <h3 class="modal__title" id="modal-title">Fotos del Proyecto</h3>
+         <button class="modal__close" onclick="closeProjectModal()">
+            <i class="ri-close-line"></i>
+         </button>
+      </div>
+
+      <div class="modal__body">
+         <div class="modal__swiper swiper">
+            <div class="swiper-wrapper" id="modal-swiper-wrapper">
+               <!-- Las imágenes se cargarán dinámicamente aquí -->
+            </div>
+
+            <!-- Navigation arrows -->
+            <div class="swiper-button-next modal__swiper-next">
+               <i class="ri-arrow-right-line"></i>
+            </div>
+            <div class="swiper-button-prev modal__swiper-prev">
+               <i class="ri-arrow-left-line"></i>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination modal__swiper-pagination"></div>
+         </div>
+      </div>
+   </div>
+   <div class="modal__overlay" onclick="closeProjectModal()"></div>
+</div>
+
+<!-- SERVICE JOBS MODAL -->
+<div class="modal" id="service-jobs-modal" style="display:none;">
+   <div class="modal__content">
+      <div class="modal__header">
+         <h3 class="modal__title" id="service-jobs-title">Trabajos del Servicio</h3>
+         <button class="modal__close" onclick="closeServiceJobsModal()">
+            <i class="ri-close-line"></i>
+         </button>
+      </div>
+      <div class="modal__body">
+         <ul class="service-jobs-list" id="service-jobs-list">
+            <!-- Los trabajos se cargarán dinámicamente aquí -->
+         </ul>
+      </div>
+   </div>
+   <div class="modal__overlay" onclick="closeServiceJobsModal()"></div>
+</div>
+
+<!-- GALLERY MODAL -->
+<div class="gallery-modal" id="gallery-modal">
+   <button class="gallery-close-modal" id="gallery-close-modal">&times;</button>
+   <div class="gallery-modal-content">
+      <img src="" alt="" class="gallery-modal-image" id="gallery-modal-image">
+   </div>
+</div>

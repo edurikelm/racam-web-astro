@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Montserrat", sans-serif;
+
+  --color-first: hsl(18, 95%, 55%);
+  --color-second: hsl(42, 98%, 52%);
+  --color-title: hsl(255, 12%, 12%);
+  --color-text: hsl(225, 12%, 24%);
+  --color-text-light: hsl(255, 4%, 70%);
+  --color-body: hsl(0, 0%, 100%);
+  --color-container: hsl(0, 0%, 100%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(255, 20%, 10%);
+  --color-gray-border: hsl(255, 6%, 90%);
+  --color-black-border: hsl(255, 10%, 20%);
+}

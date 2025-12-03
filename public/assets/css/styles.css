@@ -401,6 +401,10 @@ img {
 }
 
 /*=============== ABOUT ===============*/
+.about {
+  scroll-margin-top: calc(var(--header-height) + 2rem);
+}
+
 .about__container {
   row-gap: 8rem;
 }

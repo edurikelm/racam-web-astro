@@ -76,11 +76,11 @@ export const galleryData = [
     description: "Implementación de sistemas de fuerza y control para industrias.",
     categoria: "industrial"
   },
-  {
-    id: 12,
-    title: "Tableros Industriales",
-    image: "/assets/img/galeria/galeria-12.jpeg",
-    description: "Diseño y montaje de tableros eléctricos para aplicaciones industriales.",
-    categoria: "industrial"
-  }
+  // {
+  //   id: 12,
+  //   title: "Tableros Industriales",
+  //   image: "/assets/img/galeria/galeria-12.jpeg",
+  //   description: "Diseño y montaje de tableros eléctricos para aplicaciones industriales.",
+  //   categoria: "industrial"
+  // }
 ];

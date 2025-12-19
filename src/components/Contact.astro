@@ -1,23 +1,27 @@
 <section class="contact section" id="contact">
    <div class="container">
-      <span class="section__subtitle">CONTACTANOS</span>
-      <h2 class="section__title">Envianos un mensaje</h2>
+      <div class="contact__header" data-animate="fade-up">
+         <span class="section__subtitle">CONTACTANOS</span>
+         <h2 class="section__title">Envianos un mensaje</h2>
+      </div>
 
       <div class="contact__container grid">
-         <div class="contact__map">
-            <iframe
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124419.54534508!2d-77.11773049999999!3d-12.046374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima%2C%20Peru!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-               width="100%"
-               style="border:0;"
-               allowfullscreen=""
-               loading="lazy"
-               referrerpolicy="no-referrer-when-downgrade"
-            >
-            </iframe>
+         <div class="contact__map" data-animate="fade-right">
+            <div class="map-container">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124419.54534508!2d-77.11773049999999!3d-12.046374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima%2C%20Peru!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                  width="100%"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+               >
+               </iframe>
+            </div>
          </div>
 
-         <div class="contact__data">
-            <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+         <div class="contact__data" data-animate="fade-left">
+            <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
                <!-- Access Key de Web3Forms - Reemplaza con tu propia key de https://web3forms.com -->
                <input type="hidden" name="access_key" value="cb00bca7-b7dc-4fa9-a304-dbc42081158e" />
                
@@ -83,6 +87,23 @@
                      required></textarea>
                </div>
 
+               <div class="contact__form-group">
+                  <label for="contact-attachment" class="contact__form-label">
+                     <i class="ri-attachment-2"></i> Adjuntar Imágenes (Opcional)
+                  </label>
+                  <input
+                     type="file"
+                     id="contact-attachment"
+                     name="attachment"
+                     class="contact__form-input contact__form-file"
+                     accept="image/jpeg,image/png,image/jpg,image/webp"
+                     multiple
+                  />
+                  <small class="contact__form-hint">
+                     Máximo 5MB por imagen. Formatos: JPG, PNG, WEBP
+                  </small>
+               </div>
+
                <!-- Honeypot para prevenir spam -->
                <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
@@ -98,8 +119,138 @@
    </div>
 </section>
 
+<style>
+   .contact__header {
+      text-align: center;
+      margin-bottom: 3rem;
+   }
+
+   .contact__description {
+      color: var(--text-color-light);
+      max-width: 600px;
+      margin: 1rem auto 0;
+      font-size: 1rem;
+      line-height: 1.6;
+   }
+
+   .map-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .map-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+   }
+
+   .map-container iframe {
+      height: 100%;
+   }
+
+   .contact__form {
+      background: var(--container-color);
+      padding: 2.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .contact__form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+   }
+
+   .contact__form-group {
+      margin-bottom: 1.5rem;
+      animation: slideIn 0.5s ease forwards;
+      opacity: 0;
+   }
+
+   .contact__form-group:nth-child(5) { animation-delay: 0.1s; }
+   .contact__form-group:nth-child(6) { animation-delay: 0.2s; }
+   .contact__form-group:nth-child(7) { animation-delay: 0.3s; }
+   .contact__form-group:nth-child(8) { animation-delay: 0.4s; }
+   .contact__form-group:nth-child(9) { animation-delay: 0.5s; }
+
+   @keyframes slideIn {
+      from {
+         opacity: 0;
+         transform: translateX(-20px);
+      }
+      to {
+         opacity: 1;
+         transform: translateX(0);
+      }
+   }
+
+   /* Animaciones de entrada para la sección */
+   [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+   }
+
+   [data-animate].animate-in {
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   [data-animate="fade-right"] {
+      transform: translateX(-50px);
+   }
+
+   [data-animate="fade-left"] {
+      transform: translateX(50px);
+   }
+
+   [data-animate="fade-right"].animate-in,
+   [data-animate="fade-left"].animate-in {
+      transform: translateX(0);
+   }
+
+   .contact__form-button {
+      transition: all 0.3s ease;
+   }
+
+   .contact__form-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   }
+
+   .contact__form-hint {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-color-light);
+      font-style: italic;
+   }
+</style>
+
 <script is:inline>
    document.addEventListener('DOMContentLoaded', () => {
+      // Animaciones de scroll
+      const observerOptions = {
+         threshold: 0.15,
+         rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add('animate-in');
+            }
+         });
+      }, observerOptions);
+
+      document.querySelectorAll('[data-animate]').forEach(el => {
+         observer.observe(el);
+      });
+
+      // Formulario
       const form = document.getElementById('contact-form');
       const submitButton = form.querySelector('.contact__form-button');
       const formMessage = document.getElementById('form-message');

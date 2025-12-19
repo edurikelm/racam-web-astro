@@ -301,15 +301,51 @@ img {
 
 .home__img-1 {
   width: 250px;
+  height: 350px;
   margin-left: 3.5rem;
+  background-image: url('/assets/img/portada/portada-2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: changeImage-1 3s ease-in-out infinite alternate;
+  animation-delay: 4s;
+}
+
+@keyframes changeImage-1 {
+  from {
+    background-image: url('/assets/img/portada/portada-2.jpg');
+  }
+  to {
+    background-image: url('/assets/img/portada/portada-3.jpeg');
+  }
 }
 
 .home__img-2 {
   width: 150px;
+  height: 100%;
   border: 5px solid var(--black-color);
+  background-image: url('/assets/img/portada/portada-1.jpeg');
   position: absolute;
   left: 0;
   bottom: -3.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: changeImage-2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-delay: 6s;
+}
+
+@keyframes changeImage-2 {
+  from {
+    background-image: url('/assets/img/portada/portada-1.jpeg');
+  }
+  to {
+    background-image: url('/assets/img/portada/portada-4.jpeg');
+  }
 }
 
 .home__lines {
@@ -475,7 +511,6 @@ img {
 
 .services__data {
   text-align: center;
-  margin-bottom: 3rem;
 }
 
 .services__description {
@@ -693,7 +728,6 @@ img {
 /*=============== CONTACT ===============*/
 .contact__container {
   row-gap: 3rem;
-  padding-block: 1.5rem 3rem;
 }
 
 .contact__img {
@@ -815,7 +849,6 @@ img {
   max-width: 100%;
   padding: 0.75rem;
   border: 2px solid var(--gray-border);
-  border-radius: 0.5rem;
   font-family: var(--body-font);
   font-size: var(--small-font-size);
   color: var(--text-color);
@@ -848,7 +881,6 @@ img {
   font-weight: var(--font-semi-bold);
   padding: 0.875rem 1.5rem;
   border: none;
-  border-radius: 0.5rem;
   cursor: pointer;
   font-size: var(--normal-font-size);
   transition: box-shadow .4s, transform .3s;
@@ -1857,8 +1889,6 @@ img {
     grid-template-columns: 530px 515px;
     justify-content: initial;
     align-items: flex-start;
-    column-gap: 3.5rem;
-    padding-block: 3.5rem 4rem;
   }
 
   .contact__map {

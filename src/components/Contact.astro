@@ -21,16 +21,13 @@
          </div>
 
          <div class="contact__data" data-animate="fade-left">
-            <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+            <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                <!-- Access Key de Web3Forms - Reemplaza con tu propia key de https://web3forms.com -->
                <input type="hidden" name="access_key" value="cb00bca7-b7dc-4fa9-a304-dbc42081158e" />
                
                <!-- Información adicional opcional -->
                <input type="hidden" name="subject" value="Nueva Consulta desde Racam Web" />
                <input type="hidden" name="from_name" value="Formulario Racam" />
-               
-               <!-- Redirect después del envío (opcional) -->
-               <input type="hidden" name="redirect" value="https://tu-sitio.com/gracias" />
 
                <div class="contact__form-group">
                   <label for="contact-name" class="contact__form-label">
@@ -87,25 +84,13 @@
                      required></textarea>
                </div>
 
-               <div class="contact__form-group">
-                  <label for="contact-attachment" class="contact__form-label">
-                     <i class="ri-attachment-2"></i> Adjuntar Imágenes (Opcional)
-                  </label>
-                  <input
-                     type="file"
-                     id="contact-attachment"
-                     name="attachment"
-                     class="contact__form-input contact__form-file"
-                     accept="image/jpeg,image/png,image/jpg,image/webp"
-                     multiple
-                  />
-                  <small class="contact__form-hint">
-                     Máximo 5MB por imagen. Formatos: JPG, PNG, WEBP
-                  </small>
-               </div>
-
                <!-- Honeypot para prevenir spam -->
                <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+               <!-- hCaptcha widget -->
+               <div class="contact__form-group">
+                  <div class="h-captcha" data-captcha="true"></div>
+               </div>
 
                <button type="submit" class="contact__form-button">
                   Enviar
@@ -260,6 +245,17 @@
       form.addEventListener('submit', async (e) => {
          e.preventDefault();
 
+         // Validar hCaptcha
+         const hcaptchaResponse = document.querySelector('.h-captcha textarea')?.value;
+         if (!hcaptchaResponse) {
+            formMessage.textContent = 'Por favor, completa el captcha para continuar.';
+            formMessage.className = 'contact__form-message error';
+            setTimeout(() => {
+               formMessage.textContent = '';
+            }, 3000);
+            return;
+         }
+
          // Deshabilitar el botón y mostrar estado de carga
          submitButton.disabled = true;
          const originalText = buttonText.textContent;
@@ -277,6 +273,9 @@
             });
 
             const result = await response.json();
+            
+            // Debug: mostrar respuesta completa
+            console.log('Web3Forms response:', result);
 
             if (result.success) {
                // Mostrar mensaje de éxito
@@ -289,6 +288,11 @@
 
                // Limpiar el formulario
                form.reset();
+               
+               // Resetear hCaptcha
+               if (typeof hcaptcha !== 'undefined') {
+                  hcaptcha.reset();
+               }
 
                // Restaurar el botón después de 5 segundos
                setTimeout(() => {

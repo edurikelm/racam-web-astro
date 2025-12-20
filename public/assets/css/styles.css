@@ -112,7 +112,7 @@ img {
 
 .section__title,
 .section__subtitle {
-  text-align: center;
+  text-align: initial;
 }
 
 .section__title {
@@ -495,8 +495,8 @@ img {
 }
 
 /*=============== SERVICES ===============*/
-/*=============== SERVICES ===============*/
 .services {
+  background-color: var(--black-color);
   position: relative;
   overflow: hidden;
 }
@@ -512,8 +512,12 @@ img {
 .services__data {
   text-align: center;
 }
+.services__data .section__title {
+  color: var(--white-color);
+}
 
 .services__description {
+  color: var(--text-color-light);
   margin-bottom: 2rem;
 }
 
@@ -526,6 +530,7 @@ img {
 }
 
 .services__card {
+  background-color: var(--white-color);
   border: 2px solid var(--first-color);
   padding: 1rem 0.5rem;
   transition: all 0.4s ease;
@@ -911,23 +916,20 @@ img {
 
 /*=============== GALLERY ===============*/
 .gallery-section {
-  background: linear-gradient(135deg, hsl(225, 15%, 8%) 0%, hsl(255, 12%, 12%) 100%);
+  /* background: linear-gradient(135deg, hsl(225, 15%, 8%) 0%, hsl(255, 12%, 12%) 100%); */
+  background-color: var(--white-color);
   color: var(--white-color);
   overflow: hidden;
 }
 
 .gallery-header {
-  text-align: center;
   margin-bottom: 3rem;
 }
 
 .gallery-header .section__title {
-  color: var(--white-color);
+  color: var(--black-color);
   font-size: var(--big-font-size);
   font-weight: var(--font-bold);
-  background: var(--first-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease-out;
@@ -941,7 +943,7 @@ img {
 
 .gallery-filter-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 1rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
@@ -950,8 +952,8 @@ img {
 .gallery-filter-btn {
   padding: 0.8rem 1.5rem;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--white-color);
+  border: 1px solid rgba(255, 31, 31, 0.2);
+  color: var(--text-color);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: var(--font-medium);
@@ -969,8 +971,7 @@ img {
 
 .gallery-grid {
   columns: 4;
-  column-gap: 32rem;
-  padding: 16px 32px;
+  column-gap: 1.5rem;
 }
 
 .gallery-photo-card {
@@ -1059,10 +1060,47 @@ img {
 }
 
 @media screen and (max-width: 1200px) {
+  .gallery-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+
   .gallery-modal-image {
     height: auto;
   }
 
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    columns: 2;
+    column-gap: 1rem;
+  }
+
+  .gallery-photo-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-grid {
+    columns: 1;
+    column-gap: 0;
+  }
+
+  .gallery-header {
+    margin-bottom: 2rem;
+  }
+
+  .gallery-filter-buttons {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: var(--small-font-size);
+  }
 }
 
 .gallery-close-modal {
@@ -1834,7 +1872,7 @@ img {
 
   .services__section {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .services__data :is(.section__title, .section__subtitle),
@@ -1880,8 +1918,16 @@ img {
     padding: 2rem 1.5rem 4rem;
   }
 
+  .contact {
+    background-color: var(--black-color);
+  }
+
   .contact :is(.section__title, .section__subtitle) {
     text-align: initial;
+  }
+
+  .contact__header .section__title {
+    color: var(--white-color);
   }
 
   .contact__container {
@@ -1961,7 +2007,7 @@ img {
   } */
 
   .gallery-header .section__title {
-    font-size: var(--big-font-size);
+    font-size: var(--h1-font-size);
   }
 
   .footer {

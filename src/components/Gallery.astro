@@ -2,13 +2,15 @@
 import { galleryData } from '../data/gallery.js';
 
 // Extraer categorías únicas y ordenarlas
-const uniqueCategories = [...new Set(galleryData.map((photo) => photo.categoria))].sort();
+const uniqueCategories = [
+  ...new Set(galleryData.map((photo) => photo.categoria)),
+].sort();
 
 // Función para formatear el nombre de la categoría
 const formatCategoryName = (category: string): string => {
   return category
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 };
 ---
@@ -16,12 +18,10 @@ const formatCategoryName = (category: string): string => {
 <section class="gallery-section section" id="gallery">
   <div class="container">
     <div class="gallery-header">
+      <span class="section__subtitle">GALERÍA</span>
       <h2 class="section__title">
-        Galería de <span>Trabajos</span>
+        Explora nuestra galería.
       </h2>
-      <p class="gallery-subtitle">
-        Explora nuestra colección de proyectos con transiciones elegantes
-      </p>
     </div>
 
     <div class="gallery-filter-buttons">

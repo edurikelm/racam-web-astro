@@ -731,6 +731,15 @@ img {
 }
 
 /*=============== CONTACT ===============*/
+
+.contact {
+  background-color: var(--black-color);
+}
+
+.contact__header .section__title {
+  color: var(--white-color);
+}
+
 .contact__container {
   row-gap: 3rem;
 }
@@ -798,7 +807,7 @@ img {
 /* Contact Map */
 .contact__map {
   width: 100%;
-  height: 400px;
+  height: 250px;
   max-width: 600px;
   justify-self: center;
   margin-bottom: 2rem;
@@ -816,7 +825,7 @@ img {
   max-width: 100%;
   background-color: var(--container-color);
   border: 2px solid var(--gray-border);
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 0;
   transition: border-color .4s;
   box-sizing: border-box;
@@ -828,7 +837,7 @@ img {
 }
 
 .contact__form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -852,7 +861,7 @@ img {
 .contact__form-textarea {
   width: 100%;
   max-width: 100%;
-  padding: 0.75rem;
+  padding: 0.5rem;
   border: 2px solid var(--gray-border);
   font-family: var(--body-font);
   font-size: var(--small-font-size);
@@ -870,8 +879,8 @@ img {
 
 .contact__form-textarea {
   resize: vertical;
-  min-height: 80px;
-  max-height: 150px;
+  min-height: 40px;
+  max-height: 70px;
 }
 
 .contact__form-button {
@@ -884,12 +893,12 @@ img {
   background: var(--first-gradient);
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
-  padding: 0.875rem 1.5rem;
+  padding: 0.65rem 1.5rem;
   border: none;
   cursor: pointer;
   font-size: var(--normal-font-size);
   transition: box-shadow .4s, transform .3s;
-  margin-top: 0.5rem;
+  margin-top: 0;
   box-sizing: border-box;
 }
 
@@ -970,8 +979,29 @@ img {
 }
 
 .gallery-grid {
-  columns: 4;
-  column-gap: 1.5rem;
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .gallery-grid {
+    columns: 2;
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .gallery-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery-grid {
+    columns: 4;
+    column-gap: 1.5rem;
+  }
 }
 
 .gallery-photo-card {
@@ -1060,46 +1090,8 @@ img {
 }
 
 @media screen and (max-width: 1200px) {
-  .gallery-grid {
-    columns: 3;
-    column-gap: 1.5rem;
-  }
-
   .gallery-modal-image {
     height: auto;
-  }
-
-}
-
-@media screen and (max-width: 768px) {
-  .gallery-grid {
-    columns: 2;
-    column-gap: 1rem;
-  }
-
-  .gallery-photo-card {
-    margin-bottom: 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .gallery-grid {
-    columns: 1;
-    column-gap: 0;
-  }
-
-  .gallery-header {
-    margin-bottom: 2rem;
-  }
-
-  .gallery-filter-buttons {
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .gallery-filter-btn {
-    padding: 0.6rem 1rem;
-    font-size: var(--small-font-size);
   }
 }
 
@@ -1918,16 +1910,8 @@ img {
     padding: 2rem 1.5rem 4rem;
   }
 
-  .contact {
-    background-color: var(--black-color);
-  }
-
   .contact :is(.section__title, .section__subtitle) {
     text-align: initial;
-  }
-
-  .contact__header .section__title {
-    color: var(--white-color);
   }
 
   .contact__container {
@@ -1939,7 +1923,7 @@ img {
   .contact__map {
     width: 530px;
     max-width: 530px;
-    height: 100%;
+    height: 560px;
   }
 
   .contact__map iframe {
@@ -1954,6 +1938,8 @@ img {
 
   .contact__form {
     padding: 2rem;
+    height: 560px;
+    overflow-y: auto;
   }
 
   .contact__form-group {
@@ -1971,7 +1957,6 @@ img {
 
   .contact__form-input,
   .contact__form-textarea {
-    padding: 1rem;
     font-size: var(--normal-font-size);
   }
 

@@ -308,7 +308,7 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   animation: changeImage-1 3s ease-in-out infinite alternate;
-  animation-delay: 4s;
+  /* animation-delay: 4s; */
 }
 
 @keyframes changeImage-1 {
@@ -332,11 +332,11 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   animation: changeImage-2;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
-  animation-delay: 6s;
+  /* animation-delay: 6s; */
 }
 
 @keyframes changeImage-2 {

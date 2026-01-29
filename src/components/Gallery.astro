@@ -24,7 +24,7 @@ const formatCategoryName = (category: string): string => {
       </h2>
     </div>
 
-    <div class="gallery-filter-buttons">
+    <!-- <div class="gallery-filter-buttons">
       <button class="gallery-filter-btn active" data-filter="all">Todas</button>
       {
         uniqueCategories.map((category) => (
@@ -33,7 +33,7 @@ const formatCategoryName = (category: string): string => {
           </button>
         ))
       }
-    </div>
+    </div> -->
 
     <div class="gallery-grid" id="gallery-grid">
       {
@@ -44,10 +44,10 @@ const formatCategoryName = (category: string): string => {
               alt={photo.title}
               class="gallery-photo-image"
             />
-            <div class="gallery-photo-overlay">
+            {/* <div class="gallery-photo-overlay">
               <h3 class="gallery-photo-title">{photo.title}</h3>
               <p class="gallery-photo-description">{photo.description}</p>
-            </div>
+            </div> */}
           </div>
         ))
       }

@@ -83,4 +83,32 @@ export const galleryData = [
   //   description: "Diseño y montaje de tableros eléctricos para aplicaciones industriales.",
   //   categoria: "industrial"
   // }
+  // {
+  //   id: 13,
+  //   title: "Instalación de Cargadores Eléctricos",
+  //   image: "/assets/img/galeria/galeria-13.jpeg",
+  //   description: "Montaje de estaciones de carga para vehículos eléctricos en residencias y comercios.",
+  //   categoria: "comercial"
+  // },
+  {
+    id: 14,
+    title: "Instalación de Paneles Solares",
+    image: "/assets/img/galeria/galeria-14.jpeg",
+    description: "Montaje de sistema de energía solar para viviendas y comercios.",
+    categoria: "residencial"
+  },
+  {
+    id: 15,
+    title: "Mantenimiento de Generadores Eléctricos",
+    image: "/assets/img/galeria/galeria-15.jpeg",
+    description: "Revisión y mantenimiento de generadores eléctricos para asegurar su funcionamiento óptimo.",
+    categoria: "industrial"
+  },
+  {
+    id: 16,
+    title: "Instalación de Sistemas de Seguridad Eléctrica",
+    image: "/assets/img/galeria/galeria-16.jpeg",
+    description: "Implementación de sistemas de seguridad eléctrica para proteger instalaciones y personas.",
+    categoria: "certificacion"
+  }
 ];

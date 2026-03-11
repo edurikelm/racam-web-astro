@@ -1,36 +1,36 @@
 export const services = [
-  {
-    id: 1,
-    title: "Instalaciones Eléctricas",
-    icon: "ri-flashlight-line",
-    items: [
-      "Montaje y actualización tableros",
-      "Canalizaciones",
-      "Alumbrado interior o exterior",
-      "Aumento de carga"
-    ]
-  },
-  {
-    id: 2,
-    title: "Mantenciones Programadas",
-    icon: "ri-tools-line",
-    items: [
-      "Revisiones preventivas",
-      "Mediciones",
-      "Corrección de fallas"
-    ]
-  },
-  {
-    id: 3,
-    title: "Emergencias",
-    icon: "ri-alarm-warning-line",
-    items: [
-      "Cortes",
-      "Cortocircuitos",
-      "Sobrecargas",
-      "Fallas de iluminación"
-    ]
-  },
+  // {
+  //   id: 1,
+  //   title: "Instalaciones Eléctricas",
+  //   icon: "ri-flashlight-line",
+  //   items: [
+  //     "Montaje y actualización tableros",
+  //     "Canalizaciones",
+  //     "Alumbrado interior o exterior",
+  //     "Aumento de carga"
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   title: "Mantenciones Programadas",
+  //   icon: "ri-tools-line",
+  //   items: [
+  //     "Revisiones preventivas",
+  //     "Mediciones",
+  //     "Corrección de fallas"
+  //   ]
+  // },
+  // {
+  //   id: 3,
+  //   title: "Emergencias",
+  //   icon: "ri-alarm-warning-line",
+  //   items: [
+  //     "Cortes",
+  //     "Cortocircuitos",
+  //     "Sobrecargas",
+  //     "Fallas de iluminación"
+  //   ]
+  // },
   {
     id: 4,
     title: "Certificaciones SEC",
@@ -38,6 +38,9 @@ export const services = [
     items: [
       "TE1",
       "TE2",
+      "TE4",
+      "Memorias de cálculo",
+      "Medición y estudio de suelo",
       "Verificación inicial",
       "Regularización de instalaciones"
     ]
@@ -62,7 +65,8 @@ export const services = [
       "Construcción de líneas eléctricas en media y baja tensión",
       "Montaje y conexión de transformadores, Reconectadores y equipos compactos de medida",
       "Medición y estudios de suelo",
-      "Proyectos y memorias técnicas"
+      "Proyectos y memorias técnicas",
+      "Construcción de mallas a tierras"
     ]
   }
 ];

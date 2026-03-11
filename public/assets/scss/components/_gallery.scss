@@ -1,0 +1,67 @@
+/*=============== GALLERY ===============*/
+.gallery-section {
+  background-color: var(--white-color);
+  padding-block: 4rem;
+  overflow: hidden;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .section__subtitle {
+    color: var(--first-color);
+  }
+
+  .section__title {
+    color: var(--black-color);
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Masonry Grid Layout
+.gallery-grid {
+  columns: 1;
+  column-gap: 1.5rem;
+  
+  @media screen and (min-width: 576px) {
+    columns: 2;
+  }
+  
+  @media screen and (min-width: 768px) {
+    columns: 3;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    columns: 4;
+  }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  background-color: var(--container-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px hsla(0, 0%, 0%, 0.12);
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .gallery-item:hover & {
+    transform: scale(1.05);
+  }
+}

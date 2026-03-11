@@ -1,18 +1,5 @@
 ---
 import { galleryData } from '../data/gallery.js';
-
-// Extraer categorías únicas y ordenarlas
-const uniqueCategories = [
-  ...new Set(galleryData.map((photo) => photo.categoria)),
-].sort();
-
-// Función para formatear el nombre de la categoría
-const formatCategoryName = (category: string): string => {
-  return category
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-};
 ---
 
 <section class="gallery-section section" id="gallery">
@@ -20,37 +7,78 @@ const formatCategoryName = (category: string): string => {
     <div class="gallery-header">
       <span class="section__subtitle">GALERÍA</span>
       <h2 class="section__title">
-        Explora nuestra galería.
+        Nuestros Proyectos
       </h2>
     </div>
 
-    <!-- <div class="gallery-filter-buttons">
-      <button class="gallery-filter-btn active" data-filter="all">Todas</button>
+    <div class="gallery-grid">
       {
-        uniqueCategories.map((category) => (
-          <button class="gallery-filter-btn" data-filter={category}>
-            {formatCategoryName(category)}
-          </button>
-        ))
-      }
-    </div> -->
-
-    <div class="gallery-grid" id="gallery-grid">
-      {
-        galleryData.map((photo) => (
-          <div class="gallery-photo-card" data-category={photo.categoria}>
+        galleryData.map((photo, index) => (
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay={index * 50}>
             <img
               src={photo.image}
-              alt={photo.title}
-              class="gallery-photo-image"
+              alt={`Proyecto ${index + 1}`}
+              class="gallery-image"
+              loading="lazy"
+              data-gallery-img
             />
-            {/* <div class="gallery-photo-overlay">
-              <h3 class="gallery-photo-title">{photo.title}</h3>
-              <p class="gallery-photo-description">{photo.description}</p>
-            </div> */}
           </div>
         ))
       }
     </div>
   </div>
 </section>
+
+<!-- Modal para mostrar imagen en grande -->
+<div class="gallery-modal" id="galleryModal">
+  <button class="gallery-modal-close" id="closeModal" aria-label="Cerrar modal">
+    ×
+  </button>
+  <div class="gallery-modal-content">
+    <img src="" alt="" class="gallery-modal-image" id="modalImage" />
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryImages = document.querySelectorAll('[data-gallery-img]');
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+
+    // Abrir modal al hacer click en una imagen
+    galleryImages.forEach((img) => {
+      img.addEventListener('click', () => {
+        modal?.classList.add('active');
+        if (modalImage instanceof HTMLImageElement && img instanceof HTMLImageElement) {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+        }
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Cerrar modal con el botón X
+    closeModal?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modal?.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Cerrar modal al hacer click fuera de la imagen
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Cerrar modal con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+</script>
